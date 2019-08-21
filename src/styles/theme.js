@@ -2,9 +2,9 @@ export const theme = {
 	breakpoints: [ '575px', '767px', '991px', '1199px' ],
 	space: [ 0, 4, 8, 16, 20, 32, 60, 100, 200 ],
 	fonts: {
-		body: 'Open Sans, sans-serif;',
-		title: 'Open Sans, sans-serif;',
-		subtitle: 'Quicksand, sans-serif;',
+		body: 'Bitter, serif;',
+		title: 'Bitter, sans-serif;',
+		subtitle: 'Bitter, sans-serif;',
 		heading: 'Bitter, serif'
 	},
 	radii: [ 5 ],
@@ -64,7 +64,7 @@ export const theme = {
 	styles: {
 		Layout: {
 			color: 'primary',
-			fontFamily: 'body',
+			fontFamily: 'Bitter',
 			fontSize: 2,
 			lineHeight: 'body',
 			a: {
@@ -73,8 +73,27 @@ export const theme = {
 					color: 'primary'
 				}
 			},
+
 			p: {
 				fontSize: 1,
+				fontFamily: 'Bitter'
+			},
+			h1: {
+				fontFamily: 'Bitter'
+			},
+			h2: {
+				fontFamily: 'Bitter'
+			},
+			h3: {
+				fontFamily: 'Bitter'
+			},
+			h4: {
+				fontFamily: 'Bitter'
+			},
+			h5: {
+				fontFamily: 'Bitter'
+			},
+			h6: {
 				fontFamily: 'Bitter'
 			}
 		},

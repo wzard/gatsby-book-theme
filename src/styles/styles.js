@@ -289,7 +289,8 @@ export const StyledButtonLink = ({ children, ...props }) => {
 				cursor: 'pointer',
 				margin: '1rem',
 				fontSize: 3,
-				fontVariant: 'all-small-caps'
+				fontVariant: 'all-small-caps',
+				fontWeight: 'bolder'
 			}}
 			{...props}
 		>
@@ -335,7 +336,7 @@ export const BookAuthor = (props) => (
 		sx={{
 			fontFamily: 'title',
 			letterSpacing: '1px',
-			fontSize: [ 3, 4, 5 ],
+			fontSize: '32px !important',
 			fontVariant: 'all-small-caps',
 			fontWeight: 'bold'
 		}}
