@@ -6,6 +6,26 @@ import { useColorMode } from 'theme-ui';
 import { FiSun, FiCloudDrizzle, FiMoon } from 'react-icons/fi';
 import { FaCannabis } from 'react-icons/fa';
 import { Location } from '@reach/router';
+import { Twitter, Facebook, Linkedin, Mail, Reddit } from 'react-social-sharing';
+
+const styles = {
+	backgroundColor: 'primary'
+};
+
+export const SharingButtons = () => (
+	<div
+		sx={{
+			display: 'flex',
+			justifyContent: 'center'
+		}}
+	>
+		<Twitter simple link="http://sharingbuttons.io" />
+		<Facebook simple link="http://sharingbuttons.io" />
+		<Mail simple link="http://sharingbuttons.io" />
+		<Linkedin simple link="http://sharingbuttons.io" />
+		<Reddit simple link="http://sharingbuttons.io" />
+	</div>
+);
 
 export const Content = ({ children }) => (
 	<StyledContent sx={{ margin: [ '0%', '0%', '0%', `5%` ] }}>{children}</StyledContent>
@@ -184,7 +204,7 @@ export const IconButton = (props) => (
 			color: 'background',
 			display: [ 'none', 'none', 'flex' ],
 			border: (theme) => `1px solid ${theme.colors.primary}`,
-			padding: '10px',
+			padding: '7px',
 			position: 'fixed',
 			top: '20px',
 			left: '20px',
@@ -247,21 +267,22 @@ export const ThemeButton = (props) => {
 	const [ colorMode, setColorMode ] = useColorMode();
 	return (
 		<header sx={{ marginTop: '6' }}>
-			<div style={{ display: 'flex', justifyContent: 'space-between', width: '200px', margin: 'auto' }}>
+			<div
+				style={{
+					display: 'flex',
+					cursor: 'pointer',
+					justifyContent: 'space-between',
+					width: '50px',
+					margin: 'auto',
+					position: 'fixed',
+					top: '10px',
+					left: '10px'
+				}}
+			>
 				<FiSun
 					sx={{ opacity: colorMode === 'light' ? '1' : '0.5' }}
 					className="ThemeIcon"
 					onClick={(e) => setColorMode('light')}
-				/>
-				<FiCloudDrizzle
-					onClick={(e) => setColorMode('drizzle')}
-					sx={{ opacity: colorMode === 'drizzle' ? '1' : '0.5' }}
-					className="ThemeIcon"
-				/>
-				<FaCannabis
-					onClick={(e) => setColorMode('weed')}
-					sx={{ opacity: colorMode === 'weed' ? '1' : '0.5' }}
-					className="ThemeIcon"
 				/>
 				<FiMoon
 					sx={{ opacity: colorMode === 'dark' ? '1' : '0.5' }}
