@@ -7,7 +7,9 @@ import { FiSun, FiCloudDrizzle, FiMoon } from 'react-icons/fi';
 import { FaCannabis } from 'react-icons/fa';
 import { Location } from '@reach/router';
 
-export const Content = ({ children }) => <StyledContent style={{ margin: `5%` }}>{children}</StyledContent>;
+export const Content = ({ children }) => (
+	<StyledContent sx={{ margin: [ '0%', '0%', '0%', `5%` ] }}>{children}</StyledContent>
+);
 
 export const ChapterNumber = ({ children }) => (
 	<span
@@ -89,7 +91,7 @@ export const TableOfContentSectionList = ({ children, colNumber }) => (
 		sx={{
 			paddingLeft: [ 1, 2, 4 ],
 			columnCount: [ 1, 2, 2 ],
-			fontFamily: 'body',
+			fontFamily: 'title',
 			listStylePosition: 'inside'
 		}}
 	>
@@ -134,7 +136,7 @@ export const Container = (props) => (
 		sx={{
 			padding: 4,
 			width: [ 'auto', 'auto', 'auto', '100%' ],
-			marginLeft: [ '0%', '0%', `${!props.expand ? '470px' : '0px'}` ]
+			marginLeft: [ '0%', '0%', '0%', `${!props.expand ? '470px' : '0px'}` ]
 		}}
 	>
 		{props.children}
@@ -145,10 +147,11 @@ export const Sidebar = (props) => (
 	<div
 		sx={{
 			backgroundColor: 'background',
-			position: [ 'unset', 'unset', 'fixed' ],
-			width: [ 'auto', 'auto', `${!props.visible ? '0px' : '450px'}` ],
-			opacity: [ '1', '1', `${!props.visible ? '0' : '1'}` ],
+			position: [ 'unset', 'unset', 'unset', 'fixed' ],
+			width: [ 'auto', 'auto', 'auto', `${!props.visible ? '0px' : '450px'}` ],
+			opacity: [ '1', '1', '1', `${!props.visible ? '0' : '1'}` ],
 			transform: [
+				'translateX(0)',
 				'translateX(0)',
 				'translateX(0)',
 				`${!props.visible ? 'translateX(-450px)' : 'translateX(0px)'}`
@@ -160,6 +163,7 @@ export const Sidebar = (props) => (
 			height: '100%',
 			color: 'primary',
 			transition: [
+				'transform 1s',
 				'transform 1s',
 				'transform 1s',
 				`transform 1s, opacity 1s, width 0s linear ${!props.visible ? '2s' : '0s'}`
@@ -273,13 +277,12 @@ export const StyledButtonLink = ({ children, ...props }) => {
 	return (
 		<UnStyledLink
 			sx={{
+				border: '1px solid',
+				borderColor: 'primary',
+				padding: '10px 20px',
+				backgroundColor: 'primary',
 				textDecoration: 'none!important',
-				padding: 3,
-				backgroundColor: 'background',
-				color: 'text',
-				boxShadow: (theme) => `0 0 4px ${theme.colors.text}`,
-				border: (theme) => `1px solid ${theme.colors.text}`,
-				borderRadius: 2,
+				color: (theme) => `${theme.colors.background}!important`,
 				fontFamily: 'title',
 				letterSpacing: '1px',
 				textAlign: 'center',

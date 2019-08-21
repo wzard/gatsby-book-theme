@@ -54,9 +54,9 @@ const TopicLayout = ({
 							<Sidebar visible={open}>
 								{
 									<React.Fragment>
-										<Link to={bookPath} style={{ paddingTop: '10%' }}>
-											Back to Home
-										</Link>
+										<div style={{ paddingTop: '20px' }}>
+											<Link to={bookPath}>Back to Home</Link>
+										</div>
 										<TopicSidebarTitle>
 											<ChapterTitle>{chapterTitle}</ChapterTitle>
 										</TopicSidebarTitle>
@@ -70,15 +70,14 @@ const TopicLayout = ({
 									</React.Fragment>
 								}
 							</Sidebar>
-							<Divider />
 							<Container expand={!open}>
 								{children}
 								<Divider />
 								<div style={{ display: 'flex', justifyContent: 'space-around' }}>
 									{prev !== null ? prev.type === 'CHAPTER_PAGE' ? (
-										<StyledButtonLink to={prev.path}>Prev</StyledButtonLink>
+										<StyledButtonLink to={prev.path}>Previous</StyledButtonLink>
 									) : (
-										<StyledButtonLink to={prev.path}>Prev</StyledButtonLink>
+										<StyledButtonLink to={prev.path}>Previous</StyledButtonLink>
 									) : (
 										<p />
 									)}
@@ -118,7 +117,7 @@ const TopicLayout = ({
 						<Sidebar visible={open}>
 							{
 								<React.Fragment>
-									<Link to={bookPath} style={{ paddingTop: '10%' }}>
+									<Link to={bookPath} style={{ paddingTop: '20px' }}>
 										Back to Home
 									</Link>
 									<TopicSidebarTitle>
@@ -149,15 +148,14 @@ const TopicLayout = ({
 								</React.Fragment>
 							}
 						</Sidebar>
-						<Divider />
 						<Container expand={!open}>
 							{children}
 							<Divider />
 							<div style={{ display: 'flex', justifyContent: 'space-around' }}>
 								{prev !== null ? prev.type === 'CHAPTER_PAGE' ? (
-									<StyledButtonLink to={prev.path}>Prev</StyledButtonLink>
+									<StyledButtonLink to={prev.path}>Previous</StyledButtonLink>
 								) : (
-									<StyledButtonLink to={prev.path}>Prev</StyledButtonLink>
+									<StyledButtonLink to={prev.path}>Previous</StyledButtonLink>
 								) : (
 									<p />
 								)}

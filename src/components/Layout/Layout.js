@@ -1,15 +1,6 @@
 import React from 'react';
 import { Layout as ThemeLayout, Main } from 'theme-ui';
-import {
-	Sidebar,
-	BookTitle,
-	BookSubTitle,
-	Container,
-	BookAuthor,
-	Divider,
-	ThemeButton,
-	MainTitle
-} from '../../styles/styles';
+import { Sidebar, BookTitle, BookSubTitle, Container, BookAuthor, ThemeButton, MainTitle } from '../../styles/styles';
 import { ModalProvider } from '../Modal/Modal';
 
 const Layout = ({ children, book }) => {
@@ -25,7 +16,6 @@ const Layout = ({ children, book }) => {
 						</MainTitle>
 						<ThemeButton />
 					</Sidebar>
-					<Divider />
 
 					<Container>{children}</Container>
 				</Main>
