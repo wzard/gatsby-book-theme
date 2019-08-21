@@ -74,7 +74,7 @@ export const Section = ({ children }) => (
 			fontFamily: 'title',
 			fontVariant: 'all-small-caps',
 			textDecoration: 'none',
-			fontSize: '3rem',
+			fontSize: 5,
 			letterSpacing: '1px'
 		}}
 	>
@@ -82,16 +82,15 @@ export const Section = ({ children }) => (
 	</h3>
 );
 
-export const TableOfContent = ({ children }) => (
-	<div sx={{ width: [ '100%', '100%', '85%' ], padding: '20px' }}>{children}</div>
-);
+export const TableOfContent = ({ children }) => <div sx={{ padding: '20px' }}>{children}</div>;
 
 export const TableOfContentSectionList = ({ children, colNumber }) => (
 	<ol
 		sx={{
 			paddingLeft: [ 1, 2, 4 ],
 			columnCount: [ 1, 2, 2 ],
-			fontFamily: 'body'
+			fontFamily: 'body',
+			listStylePosition: 'inside'
 		}}
 	>
 		{children}
@@ -134,7 +133,7 @@ export const Container = (props) => (
 	<div
 		sx={{
 			padding: 4,
-			width: '100%',
+			width: [ 'auto', 'auto', 'auto', '100%' ],
 			marginLeft: [ '0%', '0%', `${!props.expand ? '470px' : '0px'}` ]
 		}}
 	>
@@ -147,7 +146,7 @@ export const Sidebar = (props) => (
 		sx={{
 			backgroundColor: 'background',
 			position: [ 'unset', 'unset', 'fixed' ],
-			width: [ '100%', '100%', `${!props.visible ? '0px' : '450px'}` ],
+			width: [ 'auto', 'auto', `${!props.visible ? '0px' : '450px'}` ],
 			opacity: [ '1', '1', `${!props.visible ? '0' : '1'}` ],
 			transform: [
 				'translateX(0)',
@@ -160,7 +159,11 @@ export const Sidebar = (props) => (
 			paddingTop: [ 4, 4, 6 ],
 			height: '100%',
 			color: 'primary',
-			transition: [ '1s', '1s', `transform 1s, opacity 1s, width 0s linear ${!props.visible ? '2s' : '0s'}` ],
+			transition: [
+				'transform 1s',
+				'transform 1s',
+				`transform 1s, opacity 1s, width 0s linear ${!props.visible ? '2s' : '0s'}`
+			],
 			overflowY: 'auto',
 			zIndex: '50'
 		}}
@@ -292,14 +295,17 @@ export const StyledButtonLink = ({ children, ...props }) => {
 	);
 };
 
-export const Divider = (props) => <hr sx={{ display: [ 'block', 'block', 'none' ], color: 'text' }} />;
+export const Divider = (props) => (
+	<hr sx={{ display: [ 'block', 'block', 'none' ], width: '75%', border: '1px solid', color: 'text' }} />
+);
 
 export const BookTitle = (props) => (
 	<h1
 		sx={{
-			title: 'title',
+			fontFamily: 'title',
 			color: 'primary',
-			borderBottom: (theme) => `5px solid ${theme.colors.primary}`
+			borderBottom: (theme) => `5px solid ${theme.colors.primary}`,
+			marginBottom: '0px'
 		}}
 	>
 		{props.children}

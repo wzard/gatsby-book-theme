@@ -1,10 +1,10 @@
 export const theme = {
-	breakpoints: [ '48em', '64em', '120em' ],
+	breakpoints: [ '575px', '767px', '991px', '1199px' ],
 	space: [ 0, 4, 8, 16, 20, 32, 60, 100, 200 ],
 	fonts: {
-		body: 'Quicksand; sans-serif',
-		title: 'Open Sans; sans-serif',
-		subtitle: 'Quicksand'
+		body: 'Open Sans; sans-serif;',
+		title: 'Open Sans; sans-serif;',
+		subtitle: 'Quicksand; sans-serif;'
 	},
 	radii: [ 5 ],
 	fontSizes: [ 16, 18, 20, 24, 26, 30, 36 ],
