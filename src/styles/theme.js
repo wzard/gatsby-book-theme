@@ -74,6 +74,9 @@ export const theme = {
 			},
 			h6: {
 				fontFamily: 'Bitter'
+			},
+			svg: {
+				fill: 'background'
 			}
 		},
 		Header: {

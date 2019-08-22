@@ -18,8 +18,7 @@ export const SharingButtons = () => {
 	const style = {
 		background: primary,
 		borderColor: primary,
-		padding: '7px 14px',
-		fill: background
+		padding: '7px 14px'
 	};
 	return (
 		<div
