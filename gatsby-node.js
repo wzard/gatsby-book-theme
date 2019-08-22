@@ -6,6 +6,15 @@ Object.defineProperty(Array.prototype, 'flat', {
 	}
 });
 
+// // gatsby-node.js
+// exports.onCreateWebpackConfig = ({ actions }) => {
+// 	actions.setWebpackConfig({
+// 		resolve: {
+// 			modules: [ path.resolve(__dirname, 'src'), 'node_modules' ]
+// 		}
+// 	});
+// };
+
 /**
  * Create Book Directories on PreBootstrap.
  */

@@ -4,11 +4,14 @@ import TopicLayout from '../components/TopicLayout';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Content } from '../styles/styles';
 import SEO from '../components/seo';
+import { MDXProvider } from '@mdx-js/react';
+import CodeModal from '../components/Addons/CodeModal';
+
+const Hello = ({ children }) => <div style={{ backgroundColor: 'green' }}>{children};</div>;
 
 const Question = ({ children }) => <MDXRenderer>{children}</MDXRenderer>;
 
 const TopicPage = ({ data, ...props }) => {
-	console.log(data);
 	const tableOfContent = data.topic.book.getTableOfContent;
 	const currentIndex = tableOfContent.findIndex((node) => node.id === data.topic.id);
 	const nextIndex =
@@ -16,6 +19,7 @@ const TopicPage = ({ data, ...props }) => {
 			? currentIndex + 1 < tableOfContent.length ? data.topic.book.getTableOfContent[currentIndex + 1] : null
 			: null;
 	const prevIndex = currentIndex !== 0 ? data.topic.book.getTableOfContent[currentIndex - 1] : null;
+	console.log(CodeModal);
 	return (
 		<TopicLayout
 			topics={data.topic.chapter.topics}
@@ -30,7 +34,9 @@ const TopicPage = ({ data, ...props }) => {
 			<SEO title={data.topic.title} />
 			<Content>
 				<h1>{data.topic.title}</h1>
-				<MDXRenderer components={{ Question }}>{data.topic.body}</MDXRenderer>
+				<MDXProvider components={{ CodeModal, Hello, Question }}>
+					<MDXRenderer components={{ Hello }}>{data.topic.body}</MDXRenderer>
+				</MDXProvider>
 			</Content>
 		</TopicLayout>
 	);

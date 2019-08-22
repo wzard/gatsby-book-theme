@@ -10,24 +10,24 @@ import {
 	ThemeButton,
 	MainTitle
 } from '../../styles/styles';
+import GlobalStyles from '../../styles/GlobalStyles';
 import { ModalProvider } from '../Modal/Modal';
 import { useStaticQuery, graphql } from 'gatsby';
 import SEO from '../seo';
 
+// const data = useStaticQuery(graphql`
+// 	query SiteTitleQuery {
+// 		site {
+// 			siteMetadata {
+// 				title
+// 			}
+// 		}
+// 	}
+// `);
 const Layout = ({ children, book }) => {
-	const data = useStaticQuery(graphql`
-		query SiteTitleQuery {
-			site {
-				siteMetadata {
-					title
-				}
-			}
-		}
-	`);
-	console.log(data);
-
 	return (
 		<ThemeLayout>
+			<GlobalStyles />
 			<SEO title={`${book.name}`} />
 			<ModalProvider>
 				<Main>
