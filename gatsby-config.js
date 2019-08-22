@@ -1,7 +1,14 @@
 const defaultOptions = require(`./utils/default-options.js`);
 
 module.exports = {
+	siteMetadata: {
+		title: 'Primer Labs',
+		siteUrl: 'https://primerlabs.io', // no trailing slash!,
+		description: 'A Personalised AI tutor to help you learn better',
+		author: 'PrimerLabs'
+	},
 	plugins: [
+		`gatsby-plugin-react-helmet`,
 		'gatsby-plugin-theme-ui',
 		{
 			resolve: 'gatsby-source-filesystem',

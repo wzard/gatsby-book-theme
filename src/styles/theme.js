@@ -33,27 +33,6 @@ export const theme = {
 				primary: '#659B5E',
 				modal: '#659B5E',
 				modalText: '#1E2019'
-			},
-			light: {
-				text: '#333',
-				background: '#FCF7F8',
-				primary: '#333',
-				modal: '#333',
-				modalText: '#FCF7F8'
-			},
-			weed: {
-				text: '#0A122A',
-				background: '#399E5A',
-				primary: '#0A122A',
-				modal: '#0A122A',
-				modalText: '#399E5A'
-			},
-			drizzle: {
-				text: '#FCF7F8',
-				background: '#26547C',
-				primary: '#FCF7F8',
-				modal: '#FCF7F8',
-				modalText: '#26547C'
 			}
 		}
 	},

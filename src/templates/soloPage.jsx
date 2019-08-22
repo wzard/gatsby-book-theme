@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import TopicLayout from '../components/TopicLayout';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Content } from '../styles/styles';
+import SEO from '../components/seo';
 
 const SoloPage = ({ data }) => {
 	const tableOfContent = data.soloPage.book.getTableOfContent;
@@ -20,6 +21,7 @@ const SoloPage = ({ data }) => {
 			chapterTitle={data.soloPage.title}
 			bookPath={data.soloPage.book.path}
 		>
+			<SEO title={data.soloPage.title} />
 			<Content>
 				<MDXRenderer>{data.soloPage.body}</MDXRenderer>
 			</Content>

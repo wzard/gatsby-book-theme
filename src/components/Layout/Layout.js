@@ -11,10 +11,24 @@ import {
 	MainTitle
 } from '../../styles/styles';
 import { ModalProvider } from '../Modal/Modal';
+import { useStaticQuery, graphql } from 'gatsby';
+import SEO from '../seo';
 
 const Layout = ({ children, book }) => {
+	const data = useStaticQuery(graphql`
+		query SiteTitleQuery {
+			site {
+				siteMetadata {
+					title
+				}
+			}
+		}
+	`);
+	console.log(data);
+
 	return (
 		<ThemeLayout>
+			<SEO title={`${book.name}`} />
 			<ModalProvider>
 				<Main>
 					<Sidebar visible={true}>

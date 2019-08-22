@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import QuestionLayout from '../components/QuestionLayout';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Content } from '../styles/styles';
+import SEO from '../components/seo';
 
 const QuestionPage = ({ data }) => {
 	return (
@@ -13,6 +14,7 @@ const QuestionPage = ({ data }) => {
 			chapterTitle={data.question.chapter.title}
 			bookPath={data.question.book.path}
 		>
+			<SEO title={data.question.title} />
 			<Content>
 				<MDXRenderer>{data.question.body}</MDXRenderer>
 			</Content>

@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import TopicLayout from '../components/TopicLayout';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Content } from '../styles/styles';
+import SEO from '../components/seo';
 
 const ChapterPage = ({ data }) => {
 	const tableOfContent = data.chapter.book.getTableOfContent;
@@ -23,6 +24,7 @@ const ChapterPage = ({ data }) => {
 			next={nextIndex}
 			prev={prevIndex}
 		>
+			<SEO title={data.chapter.title} />
 			<Content>
 				<h1>{data.chapter.title}</h1>
 				<MDXRenderer>{data.chapter.body}</MDXRenderer>

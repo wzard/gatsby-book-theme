@@ -389,7 +389,6 @@ module.exports = ({ createResolvers, schema }) => {
 					const book = context.nodeModel
 						.getAllNodes({ type: `Book` })
 						.find((book) => book.slug === source.bookSlug);
-
 					const bookPath = indexBooks > 1 ? `${book.slug}/` : book.index === true ? '/' : `${book.slug}/`;
 					const path = `/${bookPath}${source.slug}/`;
 					return path;

@@ -13,6 +13,7 @@ import { ModalProvider } from '../Modal/Modal';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { Link } from 'gatsby';
 import { IconContext } from 'react-icons';
+import SEO from '../seo';
 
 const QuestionLayout = ({
 	children,
@@ -30,6 +31,7 @@ const QuestionLayout = ({
 	const [ open, handleOpen ] = useState(true);
 	return (
 		<ThemeLayout>
+			<SEO />
 			<ModalProvider>
 				<IconContext.Provider value={{ size: '1.3em' }}>
 					<Main>

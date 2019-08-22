@@ -1,0 +1,278 @@
+
+> gatsby-primerbook-theme@1.0.0 develop /home/primer/Primer/Gatsby/ProductionTheme/primer-book-theme
+> gatsby develop --port 2000
+
+⠋ open and validate gatsby-configs
+[2K[1A[2K[G⠙ open and validate gatsby-configs
+[2K[1A[2K[Gsuccess open and validate gatsby-configs - 0.165 s
+⠙ open and validate gatsby-configs
+[2K[1A[2K[G
+[2K[1A[2K[G⠋ load plugins
+[2K[1A[2K[Gsuccess load plugins - 0.440 s
+⠋ load plugins
+[2K[1A[2K[G
+[2K[1A[2K[G⠋ onPreInit
+[2K[1A[2K[Gsuccess onPreInit - 0.023 s
+⠋ onPreInit
+[2K[1A[2K[G
+[2K[1A[2K[G⠋ initialize cache
+[2K[1A[2K[Gsuccess initialize cache - 0.030 s
+⠋ initialize cache
+[2K[1A[2K[G
+[2K[1A[2K[G⠋ copy gatsby files
+[2K[1A[2K[Gsuccess copy gatsby files - 0.056 s
+⠋ copy gatsby files
+[2K[1A[2K[G
+[2K[1A[2K[G⠋ onPreBootstrap
+[2K[1A[2K[Gsuccess onPreBootstrap - 0.030 s
+⠋ onPreBootstrap
+[2K[1A[2K[G
+[2K[1A[2K[G⠋ source and transform nodes
+[2K[1A[2K[G⠙ source and transform nodes
+[2K[1A[2K[G⠹ source and transform nodes
+[2K[1A[2K[Ginfo Created Book node for Machine Learning
+⠹ source and transform nodes
+[2K[1A[2K[Ginfo Created Book node for Logistic Regression
+⠹ source and transform nodes
+[2K[1A[2K[G⠸ source and transform nodes
+[2K[1A[2K[Gsuccess source and transform nodes - 0.721 s
+⠸ source and transform nodes
+[2K[1A[2K[G
+[2K[1A[2K[G⠋ building schema
+[2K[1A[2K[G⠙ building schema
+[2K[1A[2K[G⠹ building schema
+[2K[1A[2K[Gsuccess building schema - 0.695 s
+⠹ building schema
+[2K[1A[2K[G
+[2K[1A[2K[G⠋ createPages
+[2K[1A[2K[GChecking Path /machine-learning/appendix/
+⠋ createPages
+[2K[1A[2K[GChecking Path /machine-learning/introduction/
+⠋ createPages
+[2K[1A[2K[GChecking Path /machine-learning/foreward/
+⠋ createPages
+[2K[1A[2K[GChecking Path /logistic-regression/introduction/
+⠋ createPages
+[2K[1A[2K[GChecking Path /logistic-regression/appendix/
+⠋ createPages
+[2K[1A[2K[GChecking Path /logistic-regression/foreward/
+⠋ createPages
+[2K[1A[2K[G⠙ createPages
+[2K[1A[2K[Gsuccess createPages - 0.202 s
+⠙ createPages
+[2K[1A[2K[G
+[2K[1A[2K[G⠋ createPagesStatefully
+[2K[1A[2K[Gsuccess createPagesStatefully - 0.077 s
+⠋ createPagesStatefully
+[2K[1A[2K[G
+[2K[1A[2K[G⠋ onPreExtractQueries
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.023 s
+⠋ onPreExtractQueries
+[2K[1A[2K[G
+[2K[1A[2K[G⠋ update schema
+[2K[1A[2K[Gsuccess update schema - 0.084 s
+⠋ update schema
+[2K[1A[2K[G
+[2K[1A[2K[G⠋ extract queries from components
+[2K[1A[2K[G⠙ extract queries from components
+[2K[1A[2K[G⠹ extract queries from components
+[2K[1A[2K[Gsuccess extract queries from components - 0.502 s
+⠹ extract queries from components
+[2K[1A[2K[G
+[2K[1A[2K[G⠋ write out requires
+[2K[1A[2K[Gsuccess write out requires - 0.087 s
+⠋ write out requires
+[2K[1A[2K[G
+[2K[1A[2K[G⠋ write out redirect data
+[2K[1A[2K[Gsuccess write out redirect data - 0.027 s
+⠋ write out redirect data
+[2K[1A[2K[G
+[2K[1A[2K[G⠋ onPostBootstrap
+[2K[1A[2K[Gsuccess onPostBootstrap - 0.026 s
+⠋ onPostBootstrap
+[2K[1A[2K[G
+[2K[1A[2K[G⠀
+
+[2K[1A[2K[Ginfo bootstrap finished - 7.435 s
+
+[2K[1A[2K[G⠀
+
+[2K[1A[2K[G⠋ run static queries
+[2K[1A[2K[G⠋ run static queries — 1/2 75.49 queries/second
+[2K[1A[2K[G⠋ run static queries — 2/2 119.43 queries/second
+[2K[1A[2K[Gsuccess run static queries - 0.043 s — 2/2 119.43 queries/second
+⠋ run static queries — 2/2 119.43 queries/second
+[2K[1A[2K[G
+[2K[1A[2K[G⠋ run page queries
+[2K[1A[2K[GChecking Path /machine-learning/appendix/
+⠋ run page queries
+[2K[1A[2K[GChecking Path /machine-learning/introduction/
+⠋ run page queries
+[2K[1A[2K[GChecking Path /machine-learning/foreward/
+⠋ run page queries
+[2K[1A[2K[GChecking Path /logistic-regression/introduction/
+⠋ run page queries
+[2K[1A[2K[GChecking Path /logistic-regression/appendix/
+⠋ run page queries
+[2K[1A[2K[GChecking Path /logistic-regression/foreward/
+⠋ run page queries
+[2K[1A[2K[G⠙ run page queries
+[2K[1A[2K[G⠙ run page queries — 1/4 7.97 queries/second
+[2K[1A[2K[G⠙ run page queries — 2/4 15.06 queries/second
+[2K[1A[2K[G⠙ run page queries — 3/4 21.32 queries/second
+[2K[1A[2K[G⠙ run page queries — 4/4 26.70 queries/second
+[2K[1A[2K[Gsuccess run page queries - 0.210 s — 4/4 26.70 queries/second
+⠙ run page queries — 4/4 26.70 queries/second
+[2K[1A[2K[G
+[2K[1A[2K[G DONE  Compiled successfully in 6241ms12:40:46 PM
+
+[2K[1A[2K[G⠀
+
+[2K[1A[2K[G
+
+0 pages                                                                      gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[GYou can now view gatsby-primerbook-theme in the browser.
+
+
+0 pages                                                                      gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G⠀
+
+
+0 pages                                                                      gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G  http://localhost:2000/
+
+
+0 pages                                                                      gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G⠀
+
+
+0 pages                                                                      gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[GView GraphiQL, an in-browser IDE, to explore your site's data and schema
+
+
+0 pages                                                                      gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G⠀
+
+
+0 pages                                                                      gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G  http://localhost:2000/___graphql
+
+
+0 pages                                                                      gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G⠀
+
+
+0 pages                                                                      gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[GNote that the development build is not optimized.
+
+
+0 pages                                                                      gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[GTo create a production build, use npm run build
+
+
+0 pages                                                                      gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G⠀
+
+
+0 pages                                                                      gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G[34mℹ[39m [90m｢wdm｣[39m:
+
+
+0 pages                                                                      gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+
+
+0 pages                                                                      gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+
+18 pages                                                                     gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[GChecking Path /logistic-regression/introduction/
+
+
+18 pages                                                                     gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G WAIT  Compiling...12:43:27 PM
+
+
+18 pages                                                                     gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G⠀
+
+
+18 pages                                                                     gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+
+18 pages                                                                     gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G DONE  Compiled successfully in 1582ms12:43:29 PM
+
+
+18 pages                                                                     gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G⠀
+
+
+18 pages                                                                     gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G[34mℹ[39m [90m｢wdm｣[39m:
+
+
+18 pages                                                                     gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+
+
+18 pages                                                                     gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G WAIT  Compiling...12:43:37 PM
+
+
+18 pages                                                                     gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G⠀
+
+
+18 pages                                                                     gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+
+18 pages                                                                     gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G DONE  Compiled successfully in 821ms12:43:38 PM
+
+
+18 pages                                                                     gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G⠀
+
+
+18 pages                                                                     gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G[34mℹ[39m [90m｢wdm｣[39m:
+
+
+18 pages                                                                     gat
+sby-primerbook-theme
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[G[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+
+
+18 pages                                                                     gat
+sby-primerbook-theme

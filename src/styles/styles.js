@@ -2,30 +2,47 @@
 import { jsx } from 'theme-ui';
 import styled from '@emotion/styled';
 import { Link as UnStyledLink } from 'gatsby';
-import { useColorMode } from 'theme-ui';
-import { FiSun, FiCloudDrizzle, FiMoon } from 'react-icons/fi';
-import { FaCannabis } from 'react-icons/fa';
+import { useColorMode, useThemeUI } from 'theme-ui';
+import { FiSun, FiMoon } from 'react-icons/fi';
 import { Location } from '@reach/router';
 import { Twitter, Facebook, Linkedin, Mail, Reddit } from 'react-social-sharing';
 
-const styles = {
-	backgroundColor: 'primary'
-};
+export const SharingButtons = () => {
+	const context = useThemeUI();
+	const primary =
+		context.colorMode === 'light' ? context.theme.colors.primary : context.theme.colors.modes.dark.primary;
 
-export const SharingButtons = () => (
-	<div
-		sx={{
-			display: 'flex',
-			justifyContent: 'center'
-		}}
-	>
-		<Twitter simple link="http://sharingbuttons.io" />
-		<Facebook simple link="http://sharingbuttons.io" />
-		<Mail simple link="http://sharingbuttons.io" />
-		<Linkedin simple link="http://sharingbuttons.io" />
-		<Reddit simple link="http://sharingbuttons.io" />
-	</div>
-);
+	const background =
+		context.colorMode === 'light' ? context.theme.colors.background : context.theme.colors.modes.dark.background;
+
+	const style = {
+		background: primary,
+		borderColor: primary,
+		padding: '7px 14px',
+		fill: background
+	};
+	return (
+		<div
+			sx={{
+				display: 'flex',
+				justifyContent: 'center'
+			}}
+		>
+			<Twitter
+				iconFill={primary}
+				style={style}
+				solid
+				small
+				message="I am so cool"
+				link="http://sharingbuttons.io"
+			/>
+			<Facebook style={style} solid small link="http://sharingbuttons.io" />
+			<Mail style={style} solid small link="http://sharingbuttons.io" />
+			<Linkedin style={style} solid small link="http://sharingbuttons.io" />
+			<Reddit style={style} solid small link="http://sharingbuttons.io" />
+		</div>
+	);
+};
 
 export const Content = ({ children }) => (
 	<StyledContent sx={{ margin: [ '0%', '0%', '0%', `5%` ] }}>{children}</StyledContent>

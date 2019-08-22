@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import TopicLayout from '../components/TopicLayout';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Content } from '../styles/styles';
+import SEO from '../components/seo';
 
 const Question = ({ children }) => <MDXRenderer>{children}</MDXRenderer>;
 
@@ -26,6 +27,7 @@ const TopicPage = ({ data, ...props }) => {
 			next={nextIndex}
 			prev={prevIndex}
 		>
+			<SEO title={data.topic.title} />
 			<Content>
 				<h1>{data.topic.title}</h1>
 				<MDXRenderer components={{ Question }}>{data.topic.body}</MDXRenderer>
