@@ -29,3 +29,18 @@ books: [
 
 
 
+
+## API
+
+You can use the following directly in the Mdx Books Files
+
+- **Side**
+	- subtitle = ''
+	- float = 'right'
+	- large = false
+	- modal = false
+
+- **Full**
+	- subtitle = ''
+	- large = false
+	- modal = false,

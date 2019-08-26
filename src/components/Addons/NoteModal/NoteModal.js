@@ -6,7 +6,12 @@ import { ModalContext } from '../../Modal/Modal';
 
 // float: ${(props) => (props.float === 'left' ? 'left' : 'right')};
 const Container = styled(`div`)`
- 
+	a {
+		color: ${(props) => `${props.backgroundColor}!important`};
+		:visited, :hover, :link: {
+			color: ${(props) => `${props.backgroundColor}!important`};
+		}
+	}
   padding-bottom: 1rem;
  
   transition: all 0.5s;
@@ -14,8 +19,9 @@ const Container = styled(`div`)`
   display: block;
   padding: 1.75rem 2rem;
   :hover {
-    transform: scale(1.01);
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    transform: ${(props) => (props.modal ? 'scale(1.03)' : 'scale(1)')};
+    box-shadow: transform: ${(props) =>
+		props.modal ? '0 5px 10px 0 rgba(0, 0, 0, 0.2)' : '0 5px 10px 0 rgba(0, 0, 0, 0.2)'}; 
   }
 `;
 
@@ -27,8 +33,9 @@ const SideNote = styled(`div`)`
   display: block;
 
   :hover {
-    transform: scale(1.01);
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    transform: ${(props) => (props.modal ? 'scale(1.03)' : 'scale(1)')};
+    box-shadow:   transform: ${(props) =>
+		props.modal ? '0 5px 10px 0 rgba(0, 0, 0, 0.2)' : '0 5px 10px 0 rgba(0, 0, 0, 0.2)'}; 
   }
 
   h3 {
@@ -44,7 +51,6 @@ const SideNote = styled(`div`)`
 `;
 
 const FullNote = styled(SideNote)`
-  width: 100%;
   float: none;
   margin: 0;
   margin-top: 1rem;
@@ -57,26 +63,21 @@ const Cards = styled(SideNote)`
   font-size: 4rem;
 `;
 
-export const Side = ({
-	children,
-	subtitle = '',
-	float = 'right',
-	text = 'black',
-	background = 'coral',
-	nocolor = false,
-	modal = false,
-	large = false
-}) => {
+export const Side = ({ children, subtitle = '', float = 'right', modal = false, large = false }) => {
 	const { showModal } = useContext(ModalContext);
 	const { colorMode, theme } = useThemeUI();
-	const backgroundColor = nocolor ? theme['colors']['modes'][colorMode]['background'] : background;
-	const textColor = nocolor ? theme['colors']['modes'][colorMode]['primary'] : text;
+	const backgroundColor =
+		colorMode === 'light' ? theme['colors']['background'] : theme['colors']['modes']['dark']['background'];
+	const textColor = colorMode === 'light' ? theme['colors']['primary'] : theme['colors']['modes']['dark']['primary'];
 	const originRef = useRef(null);
 	const Box = SideNote;
 	return (
 		<Container
+			modal={modal}
+			textColor={textColor}
+			backgroundColor={backgroundColor}
 			sx={{
-				width: [ '100%', '100%', '50%' ],
+				width: [ 'auto', 'auto', 'auto', '50%' ],
 				float: float === 'left' ? [ 'none', 'none', 'left' ] : [ 'none', 'none', 'right' ],
 				margin:
 					float === 'left'
@@ -99,9 +100,10 @@ export const Side = ({
 							Component: modal,
 							props: {
 								sourceRef: originRef.current,
-								background: backgroundColor,
-								textColor: textColor
-							}
+								background: textColor,
+								textColor: backgroundColor
+							},
+							note: true
 						});
 					}
 				}}
@@ -113,20 +115,12 @@ export const Side = ({
 	);
 };
 
-export const Full = ({
-	children,
-	subtitle = '',
-	float = 'right',
-	text = 'black',
-	background = 'coral',
-	nocolor = false,
-	modal = false,
-	large = false
-}) => {
+export const Full = ({ children, subtitle = '', modal = false, large = false }) => {
 	const { showModal } = useContext(ModalContext);
 	const { colorMode, theme } = useThemeUI();
-	const backgroundColor = nocolor ? theme['colors']['modes'][colorMode]['background'] : background;
-	const textColor = nocolor ? theme['colors']['modes'][colorMode]['primary'] : text;
+	const backgroundColor =
+		colorMode === 'light' ? theme['colors']['background'] : theme['colors']['modes']['dark']['background'];
+	const textColor = colorMode === 'light' ? theme['colors']['primary'] : theme['colors']['modes']['dark']['primary'];
 	const originRef = useRef(null);
 	const Box = FullNote;
 	return (
@@ -134,7 +128,6 @@ export const Full = ({
 			<Box
 				modal={modal}
 				ref={originRef}
-				float={float}
 				sx={{
 					backgroundColor: 'modal',
 					color: 'modalText',
@@ -146,9 +139,10 @@ export const Full = ({
 							Component: modal,
 							props: {
 								sourceRef: originRef.current,
-								background: backgroundColor,
-								textColor: textColor
-							}
+								background: textColor,
+								textColor: backgroundColor
+							},
+							note: true
 						});
 					}
 				}}
@@ -173,20 +167,12 @@ export const FlashCard = ({ question, description }) => (
 	</div>
 );
 
-export const FlashCards = ({
-	subtitle = '',
-	float = 'right',
-	text = 'white',
-	background = 'coral',
-	nocolor = false,
-	modal = false,
-	large = false,
-	label = 'Test you understanding'
-}) => {
+export const FlashCards = ({ subtitle = '', modal = false, label = 'Test you understanding' }) => {
 	const { showModal } = useContext(ModalContext);
 	const { colorMode, theme } = useThemeUI();
-	const backgroundColor = nocolor ? theme['colors']['modes'][colorMode]['modal'] : background;
-	const textColor = nocolor ? theme['colors']['modes'][colorMode]['modalText'] : text;
+	const backgroundColor =
+		colorMode === 'light' ? theme['colors']['background'] : theme['colors']['modes']['dark']['background'];
+	const textColor = colorMode === 'light' ? theme['colors']['primary'] : theme['colors']['modes']['dark']['primary'];
 	const originRef = useRef(null);
 	const Box = Cards;
 	return (
@@ -194,11 +180,10 @@ export const FlashCards = ({
 			<Box
 				modal={modal}
 				ref={originRef}
-				float={float}
 				sx={{
-					backgroundColor: backgroundColor,
-					color: textColor,
-					fontSize: '3rem',
+					backgroundColor: textColor,
+					color: backgroundColor,
+					fontSize: '2rem',
 					fontFamily: 'subtitle',
 					fontVariant: 'all-small-caps',
 					letterSpacing: '1px'
@@ -209,9 +194,10 @@ export const FlashCards = ({
 							Component: modal,
 							props: {
 								sourceRef: originRef.current,
-								background: backgroundColor,
-								textColor: textColor
-							}
+								background: textColor,
+								textColor: backgroundColor
+							},
+							note: true
 						});
 					}
 				}}

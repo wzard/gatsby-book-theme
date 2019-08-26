@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DialogContent } from '@reach/dialog';
+import { Layout as ThemeLayout } from 'theme-ui';
+import { ModalContent } from '../../styles/styles';
 
 import CloseButton from './CloseButton';
 
@@ -110,7 +112,9 @@ export default ({ children, isOpen, closeModal, isClosing, sourceRef, background
 				gatsby-modal-inner-content="true"
 			>
 				<CloseButton className="CloseButton" onClick={closeModal} textColor={textColor} />
-				{children}
+				<ThemeLayout>
+					<ModalContent style={{ color: textColor }}>{children}</ModalContent>
+				</ThemeLayout>
 			</div>
 		</DialogContent>
 	);

@@ -7,3 +7,11 @@
 	color: white;
 	background: #1e2019; /* Gecko Browsers */
 }
+
+button {
+	outline: none;
+}
+
+.CloseButton {
+	border: green;
+}

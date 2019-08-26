@@ -22,7 +22,7 @@ module.exports = {
 			options: {
 				extensions: [ '.mdx', '.md' ],
 				defaultLayouts: {
-					default: require.resolve(`./src/templates/frontPage.jsx`)
+					default: require.resolve(`./src/templates/mdxPage.jsx`)
 				},
 				gatsbyRemarkPlugins: [
 					{

@@ -4,12 +4,12 @@ import TopicLayout from '../components/TopicLayout';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Content } from '../styles/styles';
 import SEO from '../components/seo';
-import { MDXProvider } from '@mdx-js/react';
+// import { MDXProvider } from '@mdx-js/react';
 import CodeModal from '../components/Addons/CodeModal';
 
 const Hello = ({ children }) => <div style={{ backgroundColor: 'green' }}>{children};</div>;
 
-const Question = ({ children }) => <MDXRenderer>{children}</MDXRenderer>;
+// const Question = ({ children }) => <MDXRenderer>{children}</MDXRenderer>;
 
 const TopicPage = ({ data, ...props }) => {
 	const tableOfContent = data.topic.book.getTableOfContent;
@@ -34,9 +34,7 @@ const TopicPage = ({ data, ...props }) => {
 			<SEO title={data.topic.title} />
 			<Content>
 				<h1>{data.topic.title}</h1>
-				<MDXProvider components={{ CodeModal, Hello, Question }}>
-					<MDXRenderer components={{ Hello }}>{data.topic.body}</MDXRenderer>
-				</MDXProvider>
+				<MDXRenderer components={{ Hello }}>{data.topic.body}</MDXRenderer>
 			</Content>
 		</TopicLayout>
 	);

@@ -3,17 +3,41 @@ import { jsx } from 'theme-ui';
 import styled from '@emotion/styled';
 import { Link as UnStyledLink } from 'gatsby';
 import { useColorMode, useThemeUI } from 'theme-ui';
-import { FiSun, FiMoon } from 'react-icons/fi';
+import { FiSun, FiMoon, FiDownload } from 'react-icons/fi';
 import { Location } from '@reach/router';
 import { Twitter, Facebook, Linkedin, Mail, Reddit } from 'react-social-sharing';
+
+export const DownloadButton = ({ title, href, ...props }) => (
+	<a
+		sx={{
+			border: '1px solid',
+			borderColor: 'primary',
+			padding: '10px 20px',
+			backgroundColor: 'primary',
+			textDecoration: 'none!important',
+			color: (theme) => `${theme.colors.background}!important`,
+			fontFamily: 'title',
+			letterSpacing: '1px',
+			textAlign: 'center',
+			cursor: 'pointer',
+			fontSize: 3,
+			fontVariant: 'all-small-caps',
+			fontWeight: 'bolder',
+			verticalAlign: 'middle'
+		}}
+		href={href}
+		download
+		target="__blank"
+		{...props}
+	>
+		<FiDownload size="18px" /> title
+	</a>
+);
 
 export const SharingButtons = () => {
 	const context = useThemeUI();
 	const primary =
 		context.colorMode === 'light' ? context.theme.colors.primary : context.theme.colors.modes.dark.primary;
-
-	const background =
-		context.colorMode === 'light' ? context.theme.colors.background : context.theme.colors.modes.dark.background;
 
 	const style = {
 		background: primary,
@@ -43,7 +67,19 @@ export const SharingButtons = () => {
 	);
 };
 
-export const Content = ({ children }) => (
+export const ModalContent = ({ children }) => {
+	const context = useThemeUI();
+	const background =
+		context.colorMode === 'light' ? context.theme.colors.background : context.theme.colors.modes.dark.background;
+
+	return (
+		<ModalStyledContent background={background} sx={{ margin: '5%', color: 'background' }}>
+			{children}
+		</ModalStyledContent>
+	);
+};
+
+export const Content = ({ children, style }) => (
 	<StyledContent sx={{ margin: [ '0%', '0%', '0%', `5%` ] }}>{children}</StyledContent>
 );
 
@@ -59,6 +95,47 @@ export const ChapterNumber = ({ children }) => (
 		{children}
 	</span>
 );
+
+const ModalStyledContent = styled(`div`)`
+
+a {
+	color: ${(props) => `${props.background}!important`};
+	:visited, :hover, :link: {
+		color: ${(props) => `${props.background}!important`};
+	}
+}
+  .gatsby-highlight {
+    max-height: 30rem;
+    overflow-y: auto;
+    border-radius: 0.2rem;
+    margin: 3rem 0;
+
+    pre {
+      margin: 0;
+      padding: 1rem 1.5rem;
+    }
+
+    /* width */
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #222;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #666;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #999;
+    }
+  }
+`;
 
 const StyledContent = styled(`div`)`
   .gatsby-highlight {
@@ -436,12 +513,12 @@ export const Button = ({ children }) => (
 export const TopicListItem = ({ topic }) => {
 	return (
 		<Location>
-			{({ location }) => {
+			{({ location, navigate }) => {
 				const { pathname } = location;
 				const selected = pathname === topic.path;
-				console.log(topic.path);
 				return (
 					<li
+						onClick={() => navigate(topic.path)}
 						sx={{
 							cursor: 'pointer',
 

@@ -12,7 +12,6 @@ import {
 } from '../../styles/styles';
 import GlobalStyles from '../../styles/GlobalStyles';
 import { ModalProvider } from '../Modal/Modal';
-import { useStaticQuery, graphql } from 'gatsby';
 import SEO from '../seo';
 
 // const data = useStaticQuery(graphql`
