@@ -1,6 +1,10 @@
 const defaultOptions = require(`./utils/default-options.js`);
 
-module.exports = {
+const contentPath = defaultOptions.contentPath;
+const books = defaultOptions.books;
+const autoGenerate = defaultOptions.autoGenerate;
+
+module.exports = ({ contentPath = contentPath, books = books, autoGenerate = autoGenerate }) => ({
 	siteMetadata: {
 		title: 'Primer Labs',
 		siteUrl: 'https://primerlabs.io', // no trailing slash!,
@@ -41,4 +45,4 @@ module.exports = {
 			}
 		}
 	]
-};
+});

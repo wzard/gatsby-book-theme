@@ -1,12 +1,7 @@
 module.exports = ({ actions }) => {
 	const { createTypes } = actions;
 	const typeDefs = `
-	type MdxFrontmatter @infer {
-		author: String
-		top: Boolean
-		slug: String
-		colNumber: Int
-	}
+
 
 	type Book implements Node {
 		id: ID!
@@ -109,3 +104,10 @@ module.exports = ({ actions }) => {
 	`;
 	createTypes(typeDefs);
 };
+
+// type MdxFrontmatter @infer {
+// 	author: String
+// 	top: Boolean
+// 	slug: String
+// 	colNumber: Int
+// }

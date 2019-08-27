@@ -17,7 +17,7 @@ module.exports = ({ reporter }, options) => {
 
 				// Copying Example Content from src/data
 				try {
-					fs.copySync('src/data', bookPath);
+					fs.copySync('node_modules/gatsby-primerbook-theme/src/data', bookPath);
 					reporter.info(`Copied the example book to ${bookPath} directory`);
 				} catch (err) {
 					reporter.info(`Error copying example book to ${bookPath} directory`);
@@ -34,7 +34,7 @@ module.exports = ({ reporter }, options) => {
 
 				// Copying Example Content from src/data
 				try {
-					fs.copySync('src/data', bookPath);
+					fs.copySync('node_modules/gatsby-primerbook-theme/src/data', bookPath);
 					reporter.info(`Copied the example book to ${bookPath} directory`);
 				} catch (err) {
 					reporter.info(`Error copying example book to ${bookPath} directory`);
